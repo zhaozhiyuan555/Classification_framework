@@ -109,9 +109,3 @@ python demo.py
 ```bash
 tensorboard --logdir=path/to/log/
 ```
-
-## 7.其他
-
-| 作者        | PKing               |
-|:------------|:--------------------|
-| 联系方式    | pan_jinquan@163.com | 
