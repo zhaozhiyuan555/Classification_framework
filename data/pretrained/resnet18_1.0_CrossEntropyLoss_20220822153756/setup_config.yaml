@@ -1,0 +1,45 @@
+batch_size: 32
+class_name: /home/dm/nasdata/dataset/csdn/rubbish/dataset2/class_name.txt
+config_file: configs/config.yaml
+distributed: false
+finetune: false
+gpu_id:
+- 0
+input_size:
+- 224
+- 224
+log_freq: 50
+log_root: work_space/resnet18_1.0_CrossEntropyLoss_20220822153756/log
+loss_type: CrossEntropyLoss
+lr: 0.01
+milestones:
+- 20
+- 50
+- 80
+model_root: work_space/resnet18_1.0_CrossEntropyLoss_20220822153756/model
+momentum: 0.9
+net_type: resnet18
+num_epochs: 100
+num_warn_up: 3
+num_workers: 8
+optim_type: SGD
+pretrained: false
+progress: true
+resample: true
+rgb_mean:
+- 0.5
+- 0.5
+- 0.5
+rgb_std:
+- 0.5
+- 0.5
+- 0.5
+scheduler: multi-step
+test_data: /home/dm/nasdata/dataset/csdn/rubbish/dataset2/test
+test_transform: val
+train_data:
+- /home/dm/nasdata/dataset/csdn/rubbish/dataset2/train
+train_transform: train
+weight_decay: 0.0005
+width_mult: 1.0
+work_dir: work_space/resnet18_1.0_CrossEntropyLoss_20220822153756

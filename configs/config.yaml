@@ -1,0 +1,32 @@
+# 训练数据集，可支持多个数据集
+train_data:
+  - 'D:\Python\company\Target_classification\datasets\catdog/train'
+# 测试数据集
+test_data: 'D:\Python\company\Target_classification\datasets\catdog/test'
+# 类别文件
+class_name: 'D:\Python\company\Target_classification\datasets\catdog/class_name.txt'
+train_transform: "train"       # 训练使用的数据增强方法
+test_transform: "val"          # 测试使用的数据增强方法
+resample: True                 # 进行样本均衡
+work_dir: "work_space/"        # 保存输出模型的目录
+net_type: "mobilenet_v2"       # 骨干网络,支持：resnet18,resnet50,mobilenet_v2,googlenet
+width_mult: 1.0                # 模型输入大小
+input_size: [ 224,224 ]
+rgb_mean: [ 0.5, 0.5, 0.5 ]    # for normalize inputs to [-1, 1],Sequence of means for each channel.
+rgb_std: [ 0.5, 0.5, 0.5 ]     # for normalize,Sequence of standard deviations for each channel.
+batch_size: 32
+lr: 0.01                       # 初始学习率
+optim_type: "SGD"              # 选择优化器，SSGD,Adam
+loss_type: "CrossEntropyLoss"  # 选择损失函数：支持CrossEntropyLoss,LabelSmoothing,BCELoss
+momentum: 0.9                  # SGD momentum
+num_epochs: 10                # 训练循环次数
+num_warn_up: 3                 # warn-up次数
+num_workers: 8                 # 加载数据工作进程数
+weight_decay: 0.0005           # weight_decay，默认5e-4
+scheduler: "multi-step"        # 学习率调整策略
+milestones: [ 20,50,80 ]       # 下调学习率方式
+gpu_id: [ 0 ]                  # GPU ID
+log_freq: 50                   # LOG打印频率
+progress: True                 # 是否显示进度条
+pretrained: True               # 是否使用pretrained模型
+finetune: False                # 是否进行finetune
